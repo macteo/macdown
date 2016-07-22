@@ -208,6 +208,9 @@ typedef NS_ENUM(NSUInteger, MPWordCountType) {
 @property (strong) NSMenuItem *charMenuItem;
 @property (strong) NSMenuItem *charNoSpacesMenuItem;
 @property (nonatomic) BOOL needsToUnregister;
+// macteo
+@property (nonatomic) BOOL needsToSave;
+@property (nonatomic) NSTimer *saveTimer;
 
 // Store file content in initializer until nib is loaded.
 @property (copy) NSString *loadedString;
@@ -489,6 +492,10 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
             [defaults removeObserver:self forKeyPath:key];
         for (NSString *key in MPEditorKeysToObserve())
             [self.editor removeObserver:self forKeyPath:key];
+        
+        // macteo
+        [_saveTimer invalidate];
+        _saveTimer = nil;
     }
 
     [super close];
@@ -838,8 +845,10 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
             // If this is a different page, intercept and handle ourselves.
             else if (![self isCurrentBaseUrl:request.URL])
             {
-                [listener ignore];
-                [self openOrCreateFileForUrl:request.URL];
+                // macteo
+                // [listener ignore];
+                // [self openOrCreateFileForUrl:request.URL];
+                [listener use];
                 return;
             }
             // Otherwise this is somewhere else on the same page. Jump there.
@@ -956,11 +965,21 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     NSURL *baseUrl = self.fileURL;
     if (!baseUrl)   // Unsaved doument; just use the default URL.
         baseUrl = self.preferences.htmlDefaultDirectoryUrl;
-    [self.preview.mainFrame loadHTMLString:html baseURL:baseUrl];
+    
+    // TODO: macteo infer the url
+    
+    // [self.preview.mainFrame loadHTMLString:html baseURL:baseUrl];
+    NSURL *url = [NSURL URLWithString:@"http://localhost:4000/security/2016/07/16/https-only.html"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.preview.mainFrame loadRequest:request];
+    
     self.manualRender = self.preferences.markdownManualRender;
     self.currentBaseUrl = baseUrl;
+    
+    if (_saveTimer == nil) {
+        _saveTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(saveTimerTriggered:) userInfo:nil repeats:true];
+    }
 }
-
 
 #pragma mark - Notification handler
 
@@ -968,6 +987,23 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
 {
     if (self.needsHtml)
         [self.renderer parseAndRenderLater];
+    
+    // TODO: macteo save the document so jekyll can render the page every few seconds
+    _needsToSave = true;
+}
+
+// macteo
+- (void)saveTimerTriggered:(NSTimer *)timer {
+    if (_needsToSave) {
+        _needsToSave = false;
+        [self saveDocument:nil];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSURL *url = [NSURL URLWithString:@"http://localhost:4000/security/2016/07/16/https-only.html"];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            [self.preview.mainFrame loadRequest:request];
+        });
+    }
 }
 
 - (void)userDefaultsDidChange:(NSNotification *)notification
