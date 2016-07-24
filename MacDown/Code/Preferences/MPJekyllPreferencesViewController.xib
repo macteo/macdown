@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="8oU-tO-H4D">
-                                <rect key="frame" x="14" y="12" width="285" height="18"/>
+                                <rect key="frame" x="16" y="12" width="285" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="281" id="HEU-Yz-Yak"/>
                                     <constraint firstAttribute="height" constant="14" id="h84-ab-dcY"/>
@@ -34,18 +34,14 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="-2" name="value" keyPath="self.preferences.jekyllEnableFilePreview" id="k5W-b5-FTo">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
+                                    <binding destination="-2" name="value" keyPath="self.preferences.jekyllEnableFilePreview" id="M63-y3-oVY"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="8oU-tO-H4D" firstAttribute="leading" secondItem="i39-kr-SMU" secondAttribute="leading" constant="16" id="50o-e6-AW4"/>
+                            <constraint firstItem="8oU-tO-H4D" firstAttribute="leading" secondItem="i39-kr-SMU" secondAttribute="leading" constant="18" id="50o-e6-AW4"/>
                             <constraint firstAttribute="bottom" secondItem="8oU-tO-H4D" secondAttribute="bottom" constant="14" id="BTn-Kr-BMP"/>
-                            <constraint firstAttribute="trailing" secondItem="8oU-tO-H4D" secondAttribute="trailing" constant="20" symbolic="YES" id="elu-6x-WZ5"/>
+                            <constraint firstAttribute="trailing" secondItem="8oU-tO-H4D" secondAttribute="trailing" constant="18" id="elu-6x-WZ5"/>
                         </constraints>
                     </view>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>

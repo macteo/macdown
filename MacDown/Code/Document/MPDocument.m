@@ -28,7 +28,7 @@
 #import "MPExportPanelAccessoryViewController.h"
 #import "MPMathJaxListener.h"
 #import "WebView+WebViewPrivateHeaders.h"
-
+#import "MPDocument+Jekyll.h"
 
 static NSString * const kMPDefaultAutosaveName = @"Untitled";
 
@@ -208,6 +208,10 @@ typedef NS_ENUM(NSUInteger, MPWordCountType) {
 @property (strong) NSMenuItem *charMenuItem;
 @property (strong) NSMenuItem *charNoSpacesMenuItem;
 @property (nonatomic) BOOL needsToUnregister;
+
+// Jekyll properties
+@property (nonatomic) BOOL needsToSave;
+@property (nonatomic) NSTimer *saveTimer;
 
 // Store file content in initializer until nib is loaded.
 @property (copy) NSString *loadedString;
@@ -490,6 +494,9 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
         for (NSString *key in MPEditorKeysToObserve())
             [self.editor removeObserver:self forKeyPath:key];
     }
+    
+    [_saveTimer invalidate];
+    _saveTimer = nil;
 
     [super close];
 }
@@ -838,8 +845,12 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
             // If this is a different page, intercept and handle ourselves.
             else if (![self isCurrentBaseUrl:request.URL])
             {
-                [listener ignore];
-                [self openOrCreateFileForUrl:request.URL];
+                // [listener ignore];
+                // [self openOrCreateFileForUrl:request.URL];
+                
+                // Jekyll to open local url on the preview page
+                // TODO: control this with a preference on the preferences pane
+                [listener use];
                 return;
             }
             // Otherwise this is somewhere else on the same page. Jump there.
@@ -953,6 +964,15 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
         [pasteboard writeObjects:@[self.renderer.currentHtml]];
     }
 
+    if (self.preferences.jekyllEnableFilePreview && self.jekyllDocumentPath != nil) {
+        [self previewJekyllRenderedFile];
+        
+        if (_saveTimer == nil) {
+            _saveTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(saveTimerTriggered:) userInfo:nil repeats:true];
+        }
+        return;
+    }
+    
     NSURL *baseUrl = self.fileURL;
     if (!baseUrl)   // Unsaved doument; just use the default URL.
         baseUrl = self.preferences.htmlDefaultDirectoryUrl;
@@ -966,8 +986,34 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
 
 - (void)editorTextDidChange:(NSNotification *)notification
 {
+    if (self.preferences.jekyllEnableFilePreview) {
+        _needsToSave = true;
+        return;
+    }
+    
     if (self.needsHtml)
         [self.renderer parseAndRenderLater];
+}
+
+// macteo
+- (void)saveTimerTriggered:(NSTimer *)timer {
+    if (_needsToSave) {
+        _needsToSave = false;
+        [self saveDocument:nil];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self previewJekyllRenderedFile];
+        });
+    }
+}
+
+- (void)previewJekyllRenderedFile {
+    NSString *fileString = [NSString stringWithFormat:
+                            @"http://localhost:4000%@",
+                            self.jekyllDocumentPath];
+    NSURL *url = [NSURL URLWithString:fileString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.preview.mainFrame loadRequest:request];
 }
 
 - (void)userDefaultsDidChange:(NSNotification *)notification
