@@ -85,6 +85,7 @@
 		905EF1B7196164F300FC3CE9 /* macdown in Copy Command Line Utility */ = {isa = PBXBuildFile; fileRef = 905EF1A7196164CA00FC3CE9 /* macdown */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		95456BD71D44A42100580144 /* MPJekyllPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD51D44A42100580144 /* MPJekyllPreferencesViewController.m */; };
 		95456BD81D44A42100580144 /* MPJekyllPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95456BD61D44A42100580144 /* MPJekyllPreferencesViewController.xib */; };
+		95456BDB1D44B9A600580144 /* MPDocument+Jekyll.m in Sources */ = {isa = PBXBuildFile; fileRef = 95456BDA1D44B9A600580144 /* MPDocument+Jekyll.m */; };
 		A1F4E99AFB42337CA02AC8D8 /* libPods-MacDownTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1381557A721F3568CCAA1D45 /* libPods-MacDownTests.a */; };
 /* End PBXBuildFile section */
 
@@ -273,6 +274,8 @@
 		95456BD41D44A42100580144 /* MPJekyllPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPJekyllPreferencesViewController.h; sourceTree = "<group>"; };
 		95456BD51D44A42100580144 /* MPJekyllPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPJekyllPreferencesViewController.m; sourceTree = "<group>"; };
 		95456BD61D44A42100580144 /* MPJekyllPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPJekyllPreferencesViewController.xib; sourceTree = "<group>"; };
+		95456BD91D44B9A600580144 /* MPDocument+Jekyll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPDocument+Jekyll.h"; sourceTree = "<group>"; };
+		95456BDA1D44B9A600580144 /* MPDocument+Jekyll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPDocument+Jekyll.m"; sourceTree = "<group>"; };
 		95D4BBB655329255B0D63999 /* Pods-macdown-cmd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macdown-cmd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macdown-cmd/Pods-macdown-cmd.debug.xcconfig"; sourceTree = "<group>"; };
 		C51EBB4EA913F65D820260BE /* Pods-MacDownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDownTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB427FB329835AE14051D749 /* libPods-MacDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +393,8 @@
 				1F0D9D91194AC852008E1856 /* MPDocument.h */,
 				1F0D9D92194AC852008E1856 /* MPDocument.m */,
 				1F0D9D83194AC83C008E1856 /* MPDocument.xib */,
+				95456BD91D44B9A600580144 /* MPDocument+Jekyll.h */,
+				95456BDA1D44B9A600580144 /* MPDocument+Jekyll.m */,
 			);
 			name = Document;
 			path = Code/Document;
@@ -982,6 +987,7 @@
 				1F64CCC9195F5AB900CE619A /* MPAsset.m in Sources */,
 				1FFEB3251972D88900B2254F /* NSObject+HTMLTabularize.m in Sources */,
 				1F9A14EC194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m in Sources */,
+				95456BDB1D44B9A600580144 /* MPDocument+Jekyll.m in Sources */,
 				1F5A37101C868EC0006E63E7 /* MPPlugIn.m in Sources */,
 				1FBDFEA11962A25A00BEEA70 /* MPGeneralPreferencesViewController.m in Sources */,
 				1F9A14ED194EEE9900D1C6A9 /* MPMainController.m in Sources */,
