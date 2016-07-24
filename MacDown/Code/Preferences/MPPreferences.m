@@ -114,6 +114,9 @@ static NSString * const kMPDefaultHtmlStyleName = @"GitHub2";
 @dynamic htmlCodeBlockAccessory;
 @dynamic htmlRendersTOC;
 
+// Jekyll preferences
+@dynamic jekyllEnableFilePreview;
+
 // Private preference.
 @dynamic editorBaseFontInfo;
 

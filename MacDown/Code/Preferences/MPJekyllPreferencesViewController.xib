@@ -22,11 +22,37 @@
                     <view key="contentView" id="i39-kr-SMU">
                         <rect key="frame" x="1" y="1" width="317" height="38"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="8oU-tO-H4D">
+                                <rect key="frame" x="14" y="12" width="285" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="281" id="HEU-Yz-Yak"/>
+                                    <constraint firstAttribute="height" constant="14" id="h84-ab-dcY"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Preview from Jekyll generated site" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3Ul-lB-2h8">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.preferences.jekyllEnableFilePreview" id="k5W-b5-FTo">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8oU-tO-H4D" firstAttribute="leading" secondItem="i39-kr-SMU" secondAttribute="leading" constant="16" id="50o-e6-AW4"/>
+                            <constraint firstAttribute="bottom" secondItem="8oU-tO-H4D" secondAttribute="bottom" constant="14" id="BTn-Kr-BMP"/>
+                            <constraint firstAttribute="trailing" secondItem="8oU-tO-H4D" secondAttribute="trailing" constant="20" symbolic="YES" id="elu-6x-WZ5"/>
+                        </constraints>
                     </view>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
             </subviews>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="IdL-gK-mrp"/>
     </objects>
 </document>

@@ -76,6 +76,9 @@ extern NSString * const MPDidDetectFreshInstallationNotification;
 @property (readonly) CGFloat editorBaseFontSize;
 @property (nonatomic, assign) NSFont *editorBaseFont;
 
+// Jekyll preferences
+@property (assign) BOOL jekyllEnableFilePreview;
+
 - (instancetype)init;
 
 @end
