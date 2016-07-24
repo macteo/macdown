@@ -16,7 +16,7 @@
 #import "MPMarkdownPreferencesViewController.h"
 #import "MPEditorPreferencesViewController.h"
 #import "MPHtmlPreferencesViewController.h"
-
+#import "MPJekyllPreferencesViewController.h"
 
 static NSString * const kMPTreatLastSeenStampKey = @"treatLastSeenStamp";
 
@@ -110,6 +110,7 @@ NS_INLINE void treat()
             [[MPMarkdownPreferencesViewController alloc] init],
             [[MPEditorPreferencesViewController alloc] init],
             [[MPHtmlPreferencesViewController alloc] init],
+            [[MPJekyllPreferencesViewController alloc] init],
         ];
         NSString *title = NSLocalizedString(@"Preferences",
                                             @"Preferences window title.");
