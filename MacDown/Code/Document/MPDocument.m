@@ -171,7 +171,7 @@ NS_INLINE NSColor *MPGetWebViewBackgroundColor(WebView *webview)
 @interface MPDocument ()
     <NSSplitViewDelegate, NSTextViewDelegate,
 #if __MAC_OS_X_VERSION_MAX_ALLOWED >= 101100
-     WebFrameLoadDelegate, WebPolicyDelegate,
+     WebEditingDelegate, WebFrameLoadDelegate, WebPolicyDelegate,
 #endif
      MPAutosaving, MPRendererDataSource, MPRendererDelegate>
 
@@ -209,12 +209,12 @@ typedef NS_ENUM(NSUInteger, MPWordCountType) {
 @property (strong) NSMenuItem *charNoSpacesMenuItem;
 @property (nonatomic) BOOL needsToUnregister;
 
+// Store file content in initializer until nib is loaded.
+@property (copy) NSString *loadedString;
+
 // Jekyll properties
 @property (nonatomic) BOOL needsToSave;
 @property (nonatomic) NSTimer *saveTimer;
-
-// Store file content in initializer until nib is loaded.
-@property (copy) NSString *loadedString;
 
 - (void)scaleWebview;
 - (void)syncScrollers;
@@ -452,6 +452,7 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     }
 }
 
+
 - (void)canCloseDocumentWithDelegate:(id)delegate
                  shouldCloseSelector:(SEL)selector contextInfo:(void *)context
 {
@@ -465,15 +466,16 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
 {
     if (!shouldClose)
         return;
-
+    
     [self close];
 }
+
 
 - (void)close
 {
     if (self.needsToUnregister) 
     {
-        // close can be called multiple times
+        // Close can be called multiple times, but this can only be done once.
         // http://www.cocoabuilder.com/archive/cocoa/240166-nsdocument-close-method-calls-itself.html
         self.needsToUnregister = NO;
 
@@ -494,7 +496,7 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
         for (NSString *key in MPEditorKeysToObserve())
             [self.editor removeObserver:self forKeyPath:key];
     }
-    
+
     [_saveTimer invalidate];
     _saveTimer = nil;
 
@@ -509,6 +511,16 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
 + (NSArray *)writableTypes
 {
     return @[@"net.daringfireball.markdown"];
+}
+
+- (BOOL)isDocumentEdited
+{
+    // Prevent save dialog on an unnamed, empty document. The file will still
+    // show as modified (because it is), but no save dialog will be presented
+    // when the user closes it.
+    if (!self.presentedItemURL && !self.editor.string.length)
+        return NO;
+    return [super isDocumentEdited];
 }
 
 - (BOOL)writeToURL:(NSURL *)url ofType:(NSString *)typeName
@@ -556,6 +568,7 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
         fileName = [fileName stringByAppendingPathExtension:@"md"];
         savePanel.nameFieldStringValue = fileName;
     }
+
     if (self.fileURL && self.fileURL.isFileURL)
     {
         NSString *path = self.fileURL.path;
@@ -569,7 +582,36 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
 
         savePanel.directoryURL = [NSURL fileURLWithPath:path];
     }
-    savePanel.allowedFileTypes = nil;   // Allow all extensions.
+    else
+    {
+        // Suggest a file name for new documents.
+        NSString *fileName = self.presumedFileName;
+        if (fileName && ![fileName hasExtension:@"md"])
+        {
+            fileName = [fileName stringByAppendingPathExtension:@"md"];
+            savePanel.nameFieldStringValue = fileName;
+        }
+    }
+    
+    // Get supported extensions from plist
+    static NSMutableArray *supportedExtensions = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        supportedExtensions = [NSMutableArray array];
+        NSDictionary *infoDict = [NSBundle mainBundle].infoDictionary;
+        for (NSDictionary *docType in infoDict[@"CFBundleDocumentTypes"])
+        {
+            NSArray *exts = docType[@"CFBundleTypeExtensions"];
+            if (exts.count)
+            {
+                [supportedExtensions addObjectsFromArray:exts];
+            }
+        }
+    });
+    
+    savePanel.allowedFileTypes = supportedExtensions;
+    savePanel.allowsOtherFileTypes = YES; // Allow all extensions.
+    
     return [super prepareSavePanel:savePanel];
 }
 
@@ -851,6 +893,7 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
                 // Jekyll to open local url on the preview page
                 // TODO: control this with a preference on the preferences pane
                 [listener use];
+
                 return;
             }
             // Otherwise this is somewhere else on the same page. Jump there.
@@ -963,7 +1006,7 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
         [pasteboard clearContents];
         [pasteboard writeObjects:@[self.renderer.currentHtml]];
     }
-
+    
     if (self.preferences.jekyllEnableFilePreview && self.jekyllDocumentPath != nil) {
         [self previewJekyllRenderedFile];
         
@@ -972,12 +1015,58 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
         }
         return;
     }
-    
+
     NSURL *baseUrl = self.fileURL;
     if (!baseUrl)   // Unsaved doument; just use the default URL.
         baseUrl = self.preferences.htmlDefaultDirectoryUrl;
+
     [self.preview.mainFrame loadHTMLString:html baseURL:baseUrl];
     self.manualRender = self.preferences.markdownManualRender;
+
+#if 0
+    // Unfortunately this DOM-replacing causes a lot of problems...
+    // 1. MathJax needs to be triggered.
+    // 2. Prism rendering is lost.
+    // 3. Potentially more.
+    // Essentially all JavaScript needs to be run again after we replace
+    // the DOM. I have no idea how many more problems there are, so we'll have
+    // to back off from the path for now... :(
+
+    // If we're working on the same document, try not to reload.
+    if (self.isPreviewReady && [self.currentBaseUrl isEqualTo:baseUrl])
+    {
+        // HACK: Ideally we should only inject the parts that changed, and only
+        // get the parts we need. For now we only get a complete HTML codument,
+        // and rely on regex to get the parts we want in the DOM.
+
+        // Use the existing tree if available, and replace the content.
+        DOMDocument *doc = self.preview.mainFrame.DOMDocument;
+        DOMNodeList *htmlNodes = [doc getElementsByTagName:@"html"];
+        if (htmlNodes.length >= 1)
+        {
+            static NSString *pattern = @"<html>(.*)</html>";
+            static int opts = NSRegularExpressionDotMatchesLineSeparators;
+
+            // Find things inside the <html> tag.
+            NSRegularExpression *regex =
+                [[NSRegularExpression alloc] initWithPattern:pattern
+                                                     options:opts error:NULL];
+            NSTextCheckingResult *result =
+                [regex firstMatchInString:html options:0
+                                    range:NSMakeRange(0, html.length)];
+            html = [html substringWithRange:[result rangeAtIndex:1]];
+
+            // Replace everything in the old <html> tag.
+            DOMElement *htmlNode = (DOMElement *)[htmlNodes item:0];
+            htmlNode.innerHTML = html;
+
+            return;
+        }
+    }
+#endif
+
+    // Reload the page if there's not valid tree to work with.
+    [self.preview.mainFrame loadHTMLString:html baseURL:baseUrl];
     self.currentBaseUrl = baseUrl;
 }
 
@@ -1015,6 +1104,7 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.preview.mainFrame loadRequest:request];
 }
+
 
 - (void)userDefaultsDidChange:(NSNotification *)notification
 {
@@ -1272,7 +1362,8 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
 
 - (IBAction)toggleUnorderedList:(id)sender
 {
-    [self.editor toggleBlockWithPattern:@"^[\\*\\+-] \\S" prefix:@"* "];
+    NSString *marker = self.preferences.editorUnorderedListMarker;
+    [self.editor toggleBlockWithPattern:@"^[\\*\\+-] \\S" prefix:marker];
 }
 
 - (IBAction)toggleBlockquote:(id)sender
@@ -1366,6 +1457,36 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
 
 #pragma mark - Private
 
+- (void)toggleSplitterCollapsingEditorPane:(BOOL)forEditorPane
+{
+    BOOL isVisible = forEditorPane ? self.editorVisible : self.previewVisible;
+    BOOL editorOnRight = self.preferences.editorOnRight;
+
+    float targetRatio = ((forEditorPane == editorOnRight) ? 1.0 : 0.0);
+
+    if (isVisible)
+    {
+        CGFloat oldRatio = self.splitView.dividerLocation;
+        if (oldRatio != 0.0 && oldRatio != 1.0)
+        {
+            // We don't want to save these values, since they are meaningless.
+            // The user should be able to switch between 100% editor and 100%
+            // preview without losing the old ratio.
+            self.previousSplitRatio = oldRatio;
+        }
+        [self setSplitViewDividerLocation:targetRatio];
+    }
+    else
+    {
+        // We have an inconsistency here, let's just go back to 0.5,
+        // otherwise nothing will happen
+        if (self.previousSplitRatio < 0.0)
+            self.previousSplitRatio = 0.5;
+
+        [self setSplitViewDividerLocation:self.previousSplitRatio];
+    }
+}
+
 - (void)setupEditor:(NSString *)changedKey
 {
     [self.highlighter deactivate];
@@ -1413,10 +1534,10 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
                 }];
         }
 
-        CGColorRef backgroundCGColor = self.editor.backgroundColor.CGColor;
-
         CALayer *layer = [CALayer layer];
-        layer.backgroundColor = backgroundCGColor;
+        CGColorRef backgroundCGColor = self.editor.backgroundColor.CGColor;
+        if (backgroundCGColor)
+            layer.backgroundColor = backgroundCGColor;
         self.editorContainer.layer = layer;
     }
     
@@ -1639,37 +1760,76 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     return mine == theirs || [mine isEqualToString:theirs];
 }
 
+
+#define OPEN_FAIL_ALERT_INFORMATIVE NSLocalizedString( \
+@"Please check the path of your link is correct. Turn on \
+“Automatically create link targets” If you want MacDown to \
+create nonexistent link targets for you.", \
+@"preview navigation error information")
+
+#define AUTO_CREATE_FAIL_ALERT_INFORMATIVE NSLocalizedString( \
+@"MacDown can’t create a file for the clicked link because \
+the current file is not saved anywhere yet. Save the \
+current file somewhere to enable this feature.", \
+@"preview navigation error information")
+
+
 - (void)openOrCreateFileForUrl:(NSURL *)url
 {
-    // If the URL points to a nonexistent file, create automatically if
-    // requested, or provide better error message.
-    if (url.isFileURL && ![url checkResourceIsReachableAndReturnError:NULL])
+    // Simply open the file if it is not local, or exists already.
+    if (!url.isFileURL || [url checkResourceIsReachableAndReturnError:NULL])
     {
-        if (self.preferences.createFileForLinkTarget)
-        {
-            NSDocumentController *controller =
-                [NSDocumentController sharedDocumentController];
-            [controller openUntitledDocumentForURL:url display:YES error:NULL];
-            return;
-        }
+        [[NSWorkspace sharedWorkspace] openURL:url];
+        return;
+    }
 
+    // Show an error if the user doesn't want us to create it automatically.
+    if (!self.preferences.createFileForLinkTarget)
+    {
         NSAlert *alert = [[NSAlert alloc] init];
         NSString *template = NSLocalizedString(
             @"File not found at path:\n%@",
             @"preview navigation error message");
         alert.messageText = [NSString stringWithFormat:template, url.path];
-        alert.informativeText = NSLocalizedString(
-            @"Please check the path of your link is correct. Turn on "
-            @"“Automatically create link targets” If you want MacDown to "
-            @"create nonexistent link targets for you.",
-            @"preview navigation error information");
+        alert.informativeText = OPEN_FAIL_ALERT_INFORMATIVE;
         [alert runModal];
         return;
     }
 
-    // Try to open it.
-    if ([[NSWorkspace sharedWorkspace] openURL:url])
-        return;
+    // We can only create a file if the current file is saved. (Why?)
+    if (!self.fileURL)
+    {
+        NSAlert *alert = [[NSAlert alloc] init];
+        NSString *template = NSLocalizedString(
+            @"Can’t create file:\n%@", @"preview navigation error message");
+        alert.messageText = [NSString stringWithFormat:template,
+                             url.lastPathComponent];
+        alert.informativeText = AUTO_CREATE_FAIL_ALERT_INFORMATIVE;
+        [alert runModal];
+    }
+
+    // Try to created the file.
+    NSDocumentController *controller =
+        [NSDocumentController sharedDocumentController];
+
+    NSError *error = nil;
+    id doc = [controller createNewEmptyDocumentForURL:url
+                                              display:YES error:&error];
+    if (!doc)
+    {
+        NSAlert *alert = [[NSAlert alloc] init];
+        NSString *template = NSLocalizedString(
+            @"Can’t create file:\n%@",
+            @"preview navigation error message");
+        alert.messageText =
+            [NSString stringWithFormat:template, url.lastPathComponent];
+        template = NSLocalizedString(
+            @"An error occurred while creating the file:\n%@",
+            @"preview navigation error information");
+        alert.informativeText =
+            [NSString stringWithFormat:template, error.localizedDescription];
+        [alert runModal];
+    }
 }
 
 

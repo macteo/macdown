@@ -23,16 +23,15 @@ NSRunningApplication *MPRunningMacDownInstance()
     return runningInstances.firstObject;
 }
 
-
-void MPCollectForRunningMacDown(NSOrderedSet<NSURL *> *urls)
-{
-    NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-    for (NSURL *url in urls)
-        [workspace openFile:url.path withApplication:kMPApplicationName];
+void MPCollectPipedContentURLForMacDown(NSURL *url) {
+    NSUserDefaults *defaults =
+        [[NSUserDefaults alloc] initWithSuiteNamed:kMPApplicationSuiteName];
+    
+    [defaults setObject:url.path forKey:kMPPipedContentFileToOpen inSuiteNamed:kMPApplicationSuiteName];
+    [defaults synchronize];
 }
 
-
-void MPCollectForUnlaunchedMacDown(NSOrderedSet<NSURL *> *urls)
+void MPCollectForMacDown(NSOrderedSet<NSURL *> *urls)
 {
     NSUserDefaults *defaults =
         [[NSUserDefaults alloc] initWithSuiteNamed:kMPApplicationSuiteName];
@@ -40,9 +39,35 @@ void MPCollectForUnlaunchedMacDown(NSOrderedSet<NSURL *> *urls)
         [[NSMutableArray alloc] initWithCapacity:urls.count];
     for (NSURL *url in urls)
         [urlStrings addObject:url.path];
-    [defaults setObject:urlStrings forKey:@"filesToOpenOnNextLaunch"
+    [defaults setObject:urlStrings forKey:kMPFilesToOpenKey
            inSuiteNamed:kMPApplicationSuiteName];
     [defaults synchronize];
+}
+
+/**
+ * Data piped to macdown through stdin.
+ * 
+ * @return Piped data if any, otherwise nil.
+ */
+NSData* MPPipedData() {
+    NSFileHandle *stdInFileHandle = [NSFileHandle fileHandleWithStandardInput];
+    // Check if stdin file handle have anything to read
+    // Modified solution from http://stackoverflow.com/questions/7505777/how-do-i-check-for-nsfilehandle-has-data-available
+    int fd = [stdInFileHandle fileDescriptor];
+    fd_set fdset;
+    struct timeval tmout = { 0, 0 };
+    FD_ZERO(&fdset);
+    FD_SET(fd, &fdset);
+    if (select(fd + 1, &fdset, NULL, NULL, &tmout) <= 0) { // Doesn't hold any data
+        return nil;
+    }
+    else if (FD_ISSET(fd, &fdset)) { // Holds data
+        NSData *stdInData = [NSData dataWithData:[stdInFileHandle readDataToEndOfFile]];
+        return stdInData;
+    }
+    else {
+        return nil;
+    }
 }
 
 
@@ -56,6 +81,21 @@ int main(int argc, const char * argv[])
             [argproc printHelp:YES];
         else if (argproc.printsVersion)
             [argproc printVersion:YES];
+        
+        NSData *dataFromPipe = MPPipedData();
+        
+        if (dataFromPipe) {
+            // Store piped content in a temporary file which will be read by MacDown on launch
+            NSString *fileName = [NSString stringWithFormat:@"%@_%@", [[NSProcessInfo processInfo] globallyUniqueString], @"pipedText.txt"];
+            NSURL *fileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:fileName]];
+            
+            NSError *writeError;
+            [dataFromPipe writeToFile:fileURL.path options:0 error:&writeError];
+            
+            if (writeError == nil) {
+                MPCollectPipedContentURLForMacDown(fileURL);
+            }
+        }
 
         // Treat all arguments as file names to open. Convert them to absolute
         // paths and store them (as an array) in MacDown's user defaults to
@@ -70,18 +110,10 @@ int main(int argc, const char * argv[])
             NSURL *url = [NSURL URLWithString:escaped relativeToURL:pwdUrl];
             [urls addObject:url];
         }
-
-        // If the application is running, open all files with the first running
-        // instance. Otherwise save the file URLs, and start the app (saved URLs
-        // will be opened when the app launches).
-        NSRunningApplication *instance = MPRunningMacDownInstance();
-        if (instance)
-            MPCollectForRunningMacDown(urls);
-        else
-            MPCollectForUnlaunchedMacDown(urls);
+        MPCollectForMacDown(urls);
 
         // Launch MacDown.
-        [[NSWorkspace sharedWorkspace] launchApplication:kMPApplicationName];
+        [[NSWorkspace sharedWorkspace] launchAppWithBundleIdentifier:kMPApplicationBundleIdentifier options:NSWorkspaceLaunchDefault additionalEventParamDescriptor:nil launchIdentifier:nil];
     }
     return EXIT_SUCCESS;
 }

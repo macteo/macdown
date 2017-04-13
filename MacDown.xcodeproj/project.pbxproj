@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15C0BF29330848020200AF61 /* libPods-macdown-cmd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BA65CAEACA5650A3900E48 /* libPods-macdown-cmd.a */; };
 		1F002A23195B3DAE008B8D93 /* MPRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F002A22195B3DAE008B8D93 /* MPRenderer.m */; };
 		1F0D9D65194AC7CF008E1856 /* NSString+Lookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D5F194AC7CF008E1856 /* NSString+Lookup.m */; };
 		1F0D9D66194AC7CF008E1856 /* NSTextView+Autocomplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D61194AC7CF008E1856 /* NSTextView+Autocomplete.m */; };
@@ -32,7 +31,6 @@
 		1F25E1C31A50F4F10029371D /* MPColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F25E1C21A50F4F10029371D /* MPColorTests.m */; };
 		1F2649B01A7406DB00EF6AF3 /* NSDocumentController+Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2649AF1A7406DB00EF6AF3 /* NSDocumentController+Document.m */; };
 		1F27896B1973BEB100EE696A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F2789691973BEB100EE696A /* Localizable.strings */; };
-		1F2A17281A1BB3E30055A107 /* NSUserDefaults+Suite.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A17271A1BB3E30055A107 /* NSUserDefaults+Suite.m */; };
 		1F3386E61A6B999600FC88C4 /* DOMNode+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3386E51A6B999600FC88C4 /* DOMNode+Text.m */; };
 		1F33F2A11A3B4B660001C849 /* MPDocumentSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F33F2A01A3B4B660001C849 /* MPDocumentSplitView.m */; };
 		1F33F2A41A3B56D20001C849 /* NSColor+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F33F2A31A3B56D20001C849 /* NSColor+HTML.m */; };
@@ -47,12 +45,14 @@
 		1F5A37101C868EC0006E63E7 /* MPPlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A370F1C868EC0006E63E7 /* MPPlugIn.m */; };
 		1F5A37141C869C81006E63E7 /* MPPlugInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A37131C869C81006E63E7 /* MPPlugInController.m */; };
 		1F64CCC9195F5AB900CE619A /* MPAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64CCC8195F5AB900CE619A /* MPAsset.m */; };
+		1F847BC61DCC9DB600A47385 /* NSUserDefaults+Suite.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F847BC51DCC9DB600A47385 /* NSUserDefaults+Suite.m */; };
 		1F8858BC1A2D8D82008DC543 /* MPArgumentProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8858BB1A2D8D82008DC543 /* MPArgumentProcessor.m */; };
 		1F8A82D919533E9300B6BF69 /* Prism in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A82D819533E9300B6BF69 /* Prism */; };
 		1F8A835D1953454F00B6BF69 /* HGMarkdownHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A83581953454F00B6BF69 /* HGMarkdownHighlighter.m */; };
 		1F8A835E1953454F00B6BF69 /* HGMarkdownHighlightingStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A835A1953454F00B6BF69 /* HGMarkdownHighlightingStyle.m */; };
 		1F8A83621953461800B6BF69 /* pmh_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A83611953461800B6BF69 /* pmh_parser.c */; settings = {COMPILER_FLAGS = "-Wno-conversion"; }; };
 		1F8A8364195346B200B6BF69 /* pmh_styleparser.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8363195346B200B6BF69 /* pmh_styleparser.c */; settings = {COMPILER_FLAGS = "-Wno-conversion"; }; };
+		1F96BD801E584A03005E0456 /* MPHomebrewSubprocessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96BD7F1E584A03005E0456 /* MPHomebrewSubprocessController.m */; };
 		1F9A14EC194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A14E9194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m */; };
 		1F9A14ED194EEE9900D1C6A9 /* MPMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A14EB194EEE9900D1C6A9 /* MPMainController.m */; };
 		1F9A14EF194EEEDD00D1C6A9 /* Styles in Resources */ = {isa = PBXBuildFile; fileRef = 1F9A14EE194EEEDD00D1C6A9 /* Styles */; };
@@ -60,7 +60,7 @@
 		1FA6CDB91952D2CD008D5CA0 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 1FA6CDB81952D2CD008D5CA0 /* dsa_pub.pem */; };
 		1FA6DE251941CC9E000409FB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA6DE241941CC9E000409FB /* Cocoa.framework */; };
 		1FA6DE481941CC9E000409FB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA6DE241941CC9E000409FB /* Cocoa.framework */; };
-		1FBBD4BE194C952300BB3C88 /* MPExportPanelAccessoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBBD4BC194C952300BB3C88 /* MPExportPanelAccessoryViewController.xib */; };
+		1FB3C0241E5061A2002AEB6A /* MPExportPanelAccessoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB3C0221E5061A2002AEB6A /* MPExportPanelAccessoryViewController.xib */; };
 		1FBBD4CB194CA36500BB3C88 /* hoedown_html_patch.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FBBD4CA194CA36500BB3C88 /* hoedown_html_patch.c */; };
 		1FBDFE9C196170FE00BEEA70 /* Extensions in Resources */ = {isa = PBXBuildFile; fileRef = 1FBDFE9B196170FE00BEEA70 /* Extensions */; };
 		1FBDFEA11962A25A00BEEA70 /* MPGeneralPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBDFE9F1962A25A00BEEA70 /* MPGeneralPreferencesViewController.m */; };
@@ -69,6 +69,7 @@
 		1FC29F5C1944FC2600D616C7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC29F5B1944FC2600D616C7 /* XCTest.framework */; };
 		1FC29F5E1944FC4F00D616C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FCDCA321944F96E00B1F966 /* InfoPlist.strings */; };
 		1FCE066419633D6C00DC83B4 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 1FCE066319633D6B00DC83B4 /* Data */; };
+		1FEAFEA21DCE762C008C4E8C /* NSUserDefaults+Suite.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F847BC51DCC9DB600A47385 /* NSUserDefaults+Suite.m */; };
 		1FF1420219A8987500CF8A6A /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1420119A8987500CF8A6A /* JavaScriptCore.framework */; };
 		1FF1420419A8A24800CF8A6A /* MPUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF1420319A8A24800CF8A6A /* MPUtilityTests.m */; };
 		1FF207631941CF22005B5654 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF207621941CF22005B5654 /* WebKit.framework */; };
@@ -80,13 +81,16 @@
 		1FFEB3271972DAB400B2254F /* MPHTMLTabularizeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEB3261972DAB400B2254F /* MPHTMLTabularizeTests.m */; };
 		1FFEB32B19737D6E00B2254F /* YAMLSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEB32A19737D6E00B2254F /* YAMLSerialization.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-unused-variable"; }; };
 		1FFF301D1948A5320009AF24 /* MPStringLookupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF301C1948A5320009AF24 /* MPStringLookupTests.m */; };
-		3D81FF4A1388EFDEE00B1AF2 /* libPods-MacDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB427FB329835AE14051D749 /* libPods-MacDown.a */; };
+		770BB49E962A302D0715A6A5 /* libPods-MacDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F926DD38559C7CEDB6E42F /* libPods-MacDown.a */; };
+		852D523C1E260A6400BA7162 /* MPTerminalPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 852D523A1E260A6400BA7162 /* MPTerminalPreferencesViewController.m */; };
+		852D523D1E260A6400BA7162 /* MPTerminalPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852D523B1E260A6400BA7162 /* MPTerminalPreferencesViewController.xib */; };
 		905EF1A9196164CA00FC3CE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905EF1A8196164CA00FC3CE9 /* Foundation.framework */; };
 		905EF1B7196164F300FC3CE9 /* macdown in Copy Command Line Utility */ = {isa = PBXBuildFile; fileRef = 905EF1A7196164CA00FC3CE9 /* macdown */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		95456BD71D44A42100580144 /* MPJekyllPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD51D44A42100580144 /* MPJekyllPreferencesViewController.m */; };
-		95456BD81D44A42100580144 /* MPJekyllPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95456BD61D44A42100580144 /* MPJekyllPreferencesViewController.xib */; };
-		95456BDB1D44B9A600580144 /* MPDocument+Jekyll.m in Sources */ = {isa = PBXBuildFile; fileRef = 95456BDA1D44B9A600580144 /* MPDocument+Jekyll.m */; };
-		A1F4E99AFB42337CA02AC8D8 /* libPods-MacDownTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1381557A721F3568CCAA1D45 /* libPods-MacDownTests.a */; };
+		95B9E6FC1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B9E6FA1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.m */; };
+		95B9E6FD1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95B9E6FB1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.xib */; };
+		95B9E7041E9F4DD30015BFD5 /* MPDocument+Jekyll.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B9E7031E9F4DD30015BFD5 /* MPDocument+Jekyll.m */; };
+		B5C5C1666A506FEA86435D25 /* libPods-macdown-cmd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 263367245B2D78A42C2F19D7 /* libPods-macdown-cmd.a */; };
+		EBFE3157737058F5A63699C8 /* libPods-MacDownTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C949FDE45493AE77DAD9BF4 /* libPods-MacDownTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,8 +149,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		01BA65CAEACA5650A3900E48 /* libPods-macdown-cmd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-macdown-cmd.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1381557A721F3568CCAA1D45 /* libPods-MacDownTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDownTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0EC0DE9FEA22F962083921 /* Pods-MacDownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDownTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests.release.xcconfig"; sourceTree = "<group>"; };
+		1A198D1BA59D710201DD3BC8 /* Pods-MacDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacDown/Pods-MacDown.debug.xcconfig"; sourceTree = "<group>"; };
 		1F002A21195B3DAE008B8D93 /* MPRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRenderer.h; sourceTree = "<group>"; };
 		1F002A22195B3DAE008B8D93 /* MPRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRenderer.m; sourceTree = "<group>"; };
 		1F0D9D5E194AC7CF008E1856 /* NSString+Lookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Lookup.h"; sourceTree = "<group>"; };
@@ -184,9 +188,6 @@
 		1F25E1C21A50F4F10029371D /* MPColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPColorTests.m; sourceTree = "<group>"; };
 		1F2649AE1A7406DB00EF6AF3 /* NSDocumentController+Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDocumentController+Document.h"; sourceTree = "<group>"; };
 		1F2649AF1A7406DB00EF6AF3 /* NSDocumentController+Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDocumentController+Document.m"; sourceTree = "<group>"; };
-		1F27896A1973BEB100EE696A /* Base */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Base; path = Localization/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1F2A17261A1BB3E30055A107 /* NSUserDefaults+Suite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+Suite.h"; path = "macdown-cmd/NSUserDefaults+Suite.h"; sourceTree = SOURCE_ROOT; };
-		1F2A17271A1BB3E30055A107 /* NSUserDefaults+Suite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+Suite.m"; path = "macdown-cmd/NSUserDefaults+Suite.m"; sourceTree = SOURCE_ROOT; };
 		1F3386E41A6B999600FC88C4 /* DOMNode+Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOMNode+Text.h"; sourceTree = "<group>"; };
 		1F3386E51A6B999600FC88C4 /* DOMNode+Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOMNode+Text.m"; sourceTree = "<group>"; };
 		1F33F29F1A3B4B660001C849 /* MPDocumentSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDocumentSplitView.h; sourceTree = "<group>"; };
@@ -210,9 +211,11 @@
 		1F64CCC7195F5AB900CE619A /* MPAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAsset.h; sourceTree = "<group>"; };
 		1F64CCC8195F5AB900CE619A /* MPAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAsset.m; sourceTree = "<group>"; };
 		1F70CCD81978F03E00703429 /* MPAutosaving.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAutosaving.h; sourceTree = "<group>"; };
+		1F847BC31DCC9DA800A47385 /* MPGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPGlobals.h; sourceTree = "<group>"; };
+		1F847BC41DCC9DB600A47385 /* NSUserDefaults+Suite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Suite.h"; sourceTree = "<group>"; };
+		1F847BC51DCC9DB600A47385 /* NSUserDefaults+Suite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Suite.m"; sourceTree = "<group>"; };
 		1F8858BA1A2D8D82008DC543 /* MPArgumentProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPArgumentProcessor.h; path = "macdown-cmd/MPArgumentProcessor.h"; sourceTree = SOURCE_ROOT; };
 		1F8858BB1A2D8D82008DC543 /* MPArgumentProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPArgumentProcessor.m; path = "macdown-cmd/MPArgumentProcessor.m"; sourceTree = SOURCE_ROOT; };
-		1F8858BD1A2D8ED4008DC543 /* MPGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPGlobals.h; path = "macdown-cmd/MPGlobals.h"; sourceTree = SOURCE_ROOT; };
 		1F8A82D819533E9300B6BF69 /* Prism */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Prism; path = Resources/Prism; sourceTree = "<group>"; };
 		1F8A83571953454F00B6BF69 /* HGMarkdownHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HGMarkdownHighlighter.h; path = "Dependency/peg-markdown-highlight/HGMarkdownHighlighter.h"; sourceTree = SOURCE_ROOT; };
 		1F8A83581953454F00B6BF69 /* HGMarkdownHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HGMarkdownHighlighter.m; path = "Dependency/peg-markdown-highlight/HGMarkdownHighlighter.m"; sourceTree = SOURCE_ROOT; };
@@ -224,6 +227,8 @@
 		1F8A8363195346B200B6BF69 /* pmh_styleparser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pmh_styleparser.c; path = "Dependency/peg-markdown-highlight/pmh_styleparser.c"; sourceTree = SOURCE_ROOT; };
 		1F8A8365195346B600B6BF69 /* pmh_styleparser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pmh_styleparser.h; path = "Dependency/peg-markdown-highlight/pmh_styleparser.h"; sourceTree = SOURCE_ROOT; };
 		1F8A837E195348C500B6BF69 /* peg-markdown-highlight.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "peg-markdown-highlight.xcodeproj"; path = "Dependency/peg-markdown-highlight/peg-markdown-highlight.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		1F96BD7E1E584A03005E0456 /* MPHomebrewSubprocessController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHomebrewSubprocessController.h; sourceTree = "<group>"; };
+		1F96BD7F1E584A03005E0456 /* MPHomebrewSubprocessController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHomebrewSubprocessController.m; sourceTree = "<group>"; };
 		1F9A14E8194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPExportPanelAccessoryViewController.h; path = Code/Application/MPExportPanelAccessoryViewController.h; sourceTree = "<group>"; };
 		1F9A14E9194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPExportPanelAccessoryViewController.m; path = Code/Application/MPExportPanelAccessoryViewController.m; sourceTree = "<group>"; };
 		1F9A14EA194EEE9900D1C6A9 /* MPMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainController.h; path = Code/Application/MPMainController.h; sourceTree = "<group>"; };
@@ -237,7 +242,8 @@
 		1FA6DE281941CC9E000409FB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1FA6DE291941CC9E000409FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1FA6DE451941CC9E000409FB /* MacDownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacDownTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FBBD4BD194C952300BB3C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MacDown/Localization/Base.lproj/MPExportPanelAccessoryViewController.xib; sourceTree = SOURCE_ROOT; };
+		1FA9196B1E4723A200850517 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Localization/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1FB3C0231E5061A2002AEB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MPExportPanelAccessoryViewController.xib; sourceTree = "<group>"; };
 		1FBBD4C9194CA35900BB3C88 /* hoedown_html_patch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hoedown_html_patch.h; sourceTree = "<group>"; };
 		1FBBD4CA194CA36500BB3C88 /* hoedown_html_patch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hoedown_html_patch.c; sourceTree = "<group>"; };
 		1FBDFE9B196170FE00BEEA70 /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Extensions; path = Resources/Extensions; sourceTree = "<group>"; };
@@ -246,6 +252,39 @@
 		1FBDFEA41962A27300BEEA70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MacDown/Localization/Base.lproj/MPGeneralPreferencesViewController.xib; sourceTree = SOURCE_ROOT; };
 		1FBE8E0E1A11DB1E003E1EF4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "macdown-cmd/main.m"; sourceTree = SOURCE_ROOT; };
 		1FC29F5B1944FC2600D616C7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1FCBDF0B1E536C8400C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localization/sv.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		1FCBDF0C1E536C8400C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localization/sv.lproj/MPExportPanelAccessoryViewController.strings; sourceTree = "<group>"; };
+		1FCBDF0D1E536C8400C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localization/sv.lproj/MPGeneralPreferencesViewController.strings; sourceTree = "<group>"; };
+		1FCBDF0E1E536C8400C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localization/sv.lproj/MPMarkdownPreferencesViewController.strings; sourceTree = "<group>"; };
+		1FCBDF0F1E536C8400C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localization/sv.lproj/MPEditorPreferencesViewController.strings; sourceTree = "<group>"; };
+		1FCBDF101E536C8500C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localization/sv.lproj/MPHtmlPreferencesViewController.strings; sourceTree = "<group>"; };
+		1FCBDF111E536C8500C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localization/sv.lproj/MPDocument.strings; sourceTree = "<group>"; };
+		1FCBDF121E536C8500C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = sv; path = Localization/sv.lproj/Credits.rtf; sourceTree = "<group>"; };
+		1FCBDF131E536C8500C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localization/sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FCBDF141E536C8900C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FCBDF151E536C9F00C0F56B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = Localization/sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1FCBDF161E536CAE00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		1FCBDF171E536CAE00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/MPExportPanelAccessoryViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF181E536CAE00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/MPGeneralPreferencesViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF191E536CAE00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/MPMarkdownPreferencesViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF1A1E536CAE00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/MPEditorPreferencesViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF1B1E536CAE00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/MPHtmlPreferencesViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF1C1E536CAE00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/MPDocument.strings"; sourceTree = "<group>"; };
+		1FCBDF1D1E536CAE00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		1FCBDF1E1E536CAE00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1FCBDF1F1E536CAF00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Localization/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1FCBDF201E536CAF00C0F56B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1FCBDF211E536CB600C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		1FCBDF221E536CB600C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/MPExportPanelAccessoryViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF231E536CB600C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/MPGeneralPreferencesViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF241E536CB600C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/MPMarkdownPreferencesViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF251E536CB600C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/MPEditorPreferencesViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF261E536CB700C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/MPHtmlPreferencesViewController.strings"; sourceTree = "<group>"; };
+		1FCBDF271E536CB700C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/MPDocument.strings"; sourceTree = "<group>"; };
+		1FCBDF281E536CB700C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		1FCBDF291E536CB700C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1FCBDF2A1E536CB700C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Localization/zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1FCBDF2B1E536CB700C0F56B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1FCD71131A20BA3A00C028B5 /* version.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = version.xcodeproj; sourceTree = "<group>"; };
 		1FCD711A1A20BE2F00C028B5 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = version.h; path = Dependency/version/version.h; sourceTree = SOURCE_ROOT; };
 		1FCDCA301944F96E00B1F966 /* MacDownTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MacDownTests-Info.plist"; sourceTree = "<group>"; };
@@ -265,21 +304,24 @@
 		1FFEB32919737D6E00B2254F /* YAMLSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAMLSerialization.h; sourceTree = "<group>"; };
 		1FFEB32A19737D6E00B2254F /* YAMLSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAMLSerialization.m; sourceTree = "<group>"; };
 		1FFF301C1948A5320009AF24 /* MPStringLookupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStringLookupTests.m; sourceTree = "<group>"; };
-		22C5E49F85A1B5EA5AE68E08 /* Pods-MacDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacDown/Pods-MacDown.release.xcconfig"; sourceTree = "<group>"; };
-		2E21FAAF2A06AF075560AC84 /* Pods-MacDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacDown/Pods-MacDown.debug.xcconfig"; sourceTree = "<group>"; };
+		263367245B2D78A42C2F19D7 /* libPods-macdown-cmd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-macdown-cmd.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39EFCAE04F60154F0C8C5469 /* Pods-MacDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacDown/Pods-MacDown.release.xcconfig"; sourceTree = "<group>"; };
+		3C949FDE45493AE77DAD9BF4 /* libPods-MacDownTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDownTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D175F0F1974282400A5EFE8 /* WebView+WebViewPrivateHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+WebViewPrivateHeaders.h"; sourceTree = "<group>"; };
-		5919A38B03A6C4C970F2584C /* Pods-MacDownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDownTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests.release.xcconfig"; sourceTree = "<group>"; };
+		42F926DD38559C7CEDB6E42F /* libPods-MacDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DBAA63927A60EB2150642B3 /* Pods-macdown-cmd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macdown-cmd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macdown-cmd/Pods-macdown-cmd.debug.xcconfig"; sourceTree = "<group>"; };
+		7A8EA75FA95818275755F0B6 /* Pods-macdown-cmd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macdown-cmd.release.xcconfig"; path = "Pods/Target Support Files/Pods-macdown-cmd/Pods-macdown-cmd.release.xcconfig"; sourceTree = "<group>"; };
+		852D52391E260A6400BA7162 /* MPTerminalPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTerminalPreferencesViewController.h; sourceTree = "<group>"; };
+		852D523A1E260A6400BA7162 /* MPTerminalPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTerminalPreferencesViewController.m; sourceTree = "<group>"; };
+		852D523B1E260A6400BA7162 /* MPTerminalPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPTerminalPreferencesViewController.xib; sourceTree = "<group>"; };
+		8CDC5EA0050D2F722FB1AADD /* Pods-MacDownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDownTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests.debug.xcconfig"; sourceTree = "<group>"; };
 		905EF1A7196164CA00FC3CE9 /* macdown */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = macdown; sourceTree = BUILT_PRODUCTS_DIR; };
 		905EF1A8196164CA00FC3CE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		95456BD41D44A42100580144 /* MPJekyllPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPJekyllPreferencesViewController.h; sourceTree = "<group>"; };
-		95456BD51D44A42100580144 /* MPJekyllPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPJekyllPreferencesViewController.m; sourceTree = "<group>"; };
-		95456BD61D44A42100580144 /* MPJekyllPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPJekyllPreferencesViewController.xib; sourceTree = "<group>"; };
-		95456BD91D44B9A600580144 /* MPDocument+Jekyll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPDocument+Jekyll.h"; sourceTree = "<group>"; };
-		95456BDA1D44B9A600580144 /* MPDocument+Jekyll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPDocument+Jekyll.m"; sourceTree = "<group>"; };
-		95D4BBB655329255B0D63999 /* Pods-macdown-cmd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macdown-cmd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macdown-cmd/Pods-macdown-cmd.debug.xcconfig"; sourceTree = "<group>"; };
-		C51EBB4EA913F65D820260BE /* Pods-MacDownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDownTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DB427FB329835AE14051D749 /* libPods-MacDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F96F8144789A886416868F0D /* Pods-macdown-cmd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macdown-cmd.release.xcconfig"; path = "Pods/Target Support Files/Pods-macdown-cmd/Pods-macdown-cmd.release.xcconfig"; sourceTree = "<group>"; };
+		95B9E6F91E9F3A540015BFD5 /* MPJekyllPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPJekyllPreferencesViewController.h; sourceTree = "<group>"; };
+		95B9E6FA1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPJekyllPreferencesViewController.m; sourceTree = "<group>"; };
+		95B9E6FB1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPJekyllPreferencesViewController.xib; sourceTree = "<group>"; };
+		95B9E7021E9F4DD30015BFD5 /* MPDocument+Jekyll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPDocument+Jekyll.h"; sourceTree = "<group>"; };
+		95B9E7031E9F4DD30015BFD5 /* MPDocument+Jekyll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPDocument+Jekyll.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,7 +332,7 @@
 				1FF1420219A8987500CF8A6A /* JavaScriptCore.framework in Frameworks */,
 				1FF207631941CF22005B5654 /* WebKit.framework in Frameworks */,
 				1FA6DE251941CC9E000409FB /* Cocoa.framework in Frameworks */,
-				3D81FF4A1388EFDEE00B1AF2 /* libPods-MacDown.a in Frameworks */,
+				770BB49E962A302D0715A6A5 /* libPods-MacDown.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +342,7 @@
 			files = (
 				1FA6DE481941CC9E000409FB /* Cocoa.framework in Frameworks */,
 				1FC29F5C1944FC2600D616C7 /* XCTest.framework in Frameworks */,
-				A1F4E99AFB42337CA02AC8D8 /* libPods-MacDownTests.a in Frameworks */,
+				EBFE3157737058F5A63699C8 /* libPods-MacDownTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				905EF1A9196164CA00FC3CE9 /* Foundation.framework in Frameworks */,
-				15C0BF29330848020200AF61 /* libPods-macdown-cmd.a in Frameworks */,
+				B5C5C1666A506FEA86435D25 /* libPods-macdown-cmd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +375,8 @@
 				1F0D9D5F194AC7CF008E1856 /* NSString+Lookup.m */,
 				1F0D9D60194AC7CF008E1856 /* NSTextView+Autocomplete.h */,
 				1F0D9D61194AC7CF008E1856 /* NSTextView+Autocomplete.m */,
+				1F847BC41DCC9DB600A47385 /* NSUserDefaults+Suite.h */,
+				1F847BC51DCC9DB600A47385 /* NSUserDefaults+Suite.m */,
 				3D175F0F1974282400A5EFE8 /* WebView+WebViewPrivateHeaders.h */,
 				1FBBD4C9194CA35900BB3C88 /* hoedown_html_patch.h */,
 				1FBBD4CA194CA36500BB3C88 /* hoedown_html_patch.c */,
@@ -344,13 +388,16 @@
 		1F0D9D62194AC7CF008E1856 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1F70CCD81978F03E00703429 /* MPAutosaving.h */,
+				1F847BC31DCC9DA800A47385 /* MPGlobals.h */,
+				1F96BD7E1E584A03005E0456 /* MPHomebrewSubprocessController.h */,
+				1F96BD7F1E584A03005E0456 /* MPHomebrewSubprocessController.m */,
 				1F23A91F19928E650052DB78 /* MPMathJaxListener.h */,
 				1F23A92019928E650052DB78 /* MPMathJaxListener.m */,
 				1F5A370E1C868EC0006E63E7 /* MPPlugIn.h */,
 				1F5A370F1C868EC0006E63E7 /* MPPlugIn.m */,
 				1F0D9D63194AC7CF008E1856 /* MPUtilities.h */,
 				1F0D9D64194AC7CF008E1856 /* MPUtilities.m */,
-				1F70CCD81978F03E00703429 /* MPAutosaving.h */,
 			);
 			name = Utility;
 			path = Code/Utility;
@@ -361,9 +408,6 @@
 			children = (
 				1F0D9D74194AC7F7008E1856 /* MPPreferencesViewController.h */,
 				1F0D9D75194AC7F7008E1856 /* MPPreferencesViewController.m */,
-				95456BD41D44A42100580144 /* MPJekyllPreferencesViewController.h */,
-				95456BD51D44A42100580144 /* MPJekyllPreferencesViewController.m */,
-				95456BD61D44A42100580144 /* MPJekyllPreferencesViewController.xib */,
 				1FBDFE9E1962A25A00BEEA70 /* MPGeneralPreferencesViewController.h */,
 				1FBDFE9F1962A25A00BEEA70 /* MPGeneralPreferencesViewController.m */,
 				1FBDFEA31962A27300BEEA70 /* MPGeneralPreferencesViewController.xib */,
@@ -376,6 +420,12 @@
 				1F0D9D6C194AC7F7008E1856 /* MPHtmlPreferencesViewController.h */,
 				1F0D9D6D194AC7F7008E1856 /* MPHtmlPreferencesViewController.m */,
 				1F0D9D87194AC83C008E1856 /* MPHtmlPreferencesViewController.xib */,
+				852D52391E260A6400BA7162 /* MPTerminalPreferencesViewController.h */,
+				852D523A1E260A6400BA7162 /* MPTerminalPreferencesViewController.m */,
+				852D523B1E260A6400BA7162 /* MPTerminalPreferencesViewController.xib */,
+				95B9E6F91E9F3A540015BFD5 /* MPJekyllPreferencesViewController.h */,
+				95B9E6FA1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.m */,
+				95B9E6FB1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.xib */,
 				1F0D9D72194AC7F7008E1856 /* MPPreferences.h */,
 				1F0D9D73194AC7F7008E1856 /* MPPreferences.m */,
 			);
@@ -392,9 +442,9 @@
 				1F002A22195B3DAE008B8D93 /* MPRenderer.m */,
 				1F0D9D91194AC852008E1856 /* MPDocument.h */,
 				1F0D9D92194AC852008E1856 /* MPDocument.m */,
+				95B9E7021E9F4DD30015BFD5 /* MPDocument+Jekyll.h */,
+				95B9E7031E9F4DD30015BFD5 /* MPDocument+Jekyll.m */,
 				1F0D9D83194AC83C008E1856 /* MPDocument.xib */,
-				95456BD91D44B9A600580144 /* MPDocument+Jekyll.h */,
-				95456BDA1D44B9A600580144 /* MPDocument+Jekyll.m */,
 			);
 			name = Document;
 			path = Code/Document;
@@ -484,7 +534,7 @@
 				1F9A14EB194EEE9900D1C6A9 /* MPMainController.m */,
 				1F9A14E8194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.h */,
 				1F9A14E9194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m */,
-				1FBBD4BC194C952300BB3C88 /* MPExportPanelAccessoryViewController.xib */,
+				1FB3C0221E5061A2002AEB6A /* MPExportPanelAccessoryViewController.xib */,
 				1F5A37121C869C81006E63E7 /* MPPlugInController.h */,
 				1F5A37131C869C81006E63E7 /* MPPlugInController.m */,
 			);
@@ -500,7 +550,7 @@
 				905EF1AA196164CA00FC3CE9 /* macdown-cmd */,
 				1FA6DE231941CC9E000409FB /* Frameworks */,
 				1FA6DE221941CC9E000409FB /* Products */,
-				CD1B556C4779DAB0B6C958DE /* Pods */,
+				AC6D1A361B8B63012D598BC7 /* Pods */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 0;
@@ -525,9 +575,9 @@
 				1FA6DE241941CC9E000409FB /* Cocoa.framework */,
 				905EF1A8196164CA00FC3CE9 /* Foundation.framework */,
 				1FA6DE261941CC9E000409FB /* Other Frameworks */,
-				DB427FB329835AE14051D749 /* libPods-MacDown.a */,
-				1381557A721F3568CCAA1D45 /* libPods-MacDownTests.a */,
-				01BA65CAEACA5650A3900E48 /* libPods-macdown-cmd.a */,
+				42F926DD38559C7CEDB6E42F /* libPods-MacDown.a */,
+				3C949FDE45493AE77DAD9BF4 /* libPods-MacDownTests.a */,
+				263367245B2D78A42C2F19D7 /* libPods-macdown-cmd.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -624,10 +674,7 @@
 		905EF1AA196164CA00FC3CE9 /* macdown-cmd */ = {
 			isa = PBXGroup;
 			children = (
-				1F2A17261A1BB3E30055A107 /* NSUserDefaults+Suite.h */,
-				1F2A17271A1BB3E30055A107 /* NSUserDefaults+Suite.m */,
 				1FCD711A1A20BE2F00C028B5 /* version.h */,
-				1F8858BD1A2D8ED4008DC543 /* MPGlobals.h */,
 				1F8858BA1A2D8D82008DC543 /* MPArgumentProcessor.h */,
 				1F8858BB1A2D8D82008DC543 /* MPArgumentProcessor.m */,
 				1FBE8E0E1A11DB1E003E1EF4 /* main.m */,
@@ -636,15 +683,15 @@
 			path = "MacDown-cmd";
 			sourceTree = "<group>";
 		};
-		CD1B556C4779DAB0B6C958DE /* Pods */ = {
+		AC6D1A361B8B63012D598BC7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2E21FAAF2A06AF075560AC84 /* Pods-MacDown.debug.xcconfig */,
-				22C5E49F85A1B5EA5AE68E08 /* Pods-MacDown.release.xcconfig */,
-				C51EBB4EA913F65D820260BE /* Pods-MacDownTests.debug.xcconfig */,
-				5919A38B03A6C4C970F2584C /* Pods-MacDownTests.release.xcconfig */,
-				95D4BBB655329255B0D63999 /* Pods-macdown-cmd.debug.xcconfig */,
-				F96F8144789A886416868F0D /* Pods-macdown-cmd.release.xcconfig */,
+				1A198D1BA59D710201DD3BC8 /* Pods-MacDown.debug.xcconfig */,
+				39EFCAE04F60154F0C8C5469 /* Pods-MacDown.release.xcconfig */,
+				8CDC5EA0050D2F722FB1AADD /* Pods-MacDownTests.debug.xcconfig */,
+				0D0EC0DE9FEA22F962083921 /* Pods-MacDownTests.release.xcconfig */,
+				4DBAA63927A60EB2150642B3 /* Pods-macdown-cmd.debug.xcconfig */,
+				7A8EA75FA95818275755F0B6 /* Pods-macdown-cmd.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -656,15 +703,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FA6DE551941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDown" */;
 			buildPhases = (
-				5C57B7B8BD1D1847D60A43CB /* [CP] Check Pods Manifest.lock */,
+				B4334ECDC0751C835C1600D7 /* [CP] Check Pods Manifest.lock */,
 				1FA6DE1D1941CC9E000409FB /* Sources */,
 				1FA6DE1E1941CC9E000409FB /* Frameworks */,
 				1FF16580199A6C950080D9A5 /* Fetch Prism Resources */,
 				1FA6DE1F1941CC9E000409FB /* Resources */,
 				1F8A82A81952F19B00B6BF69 /* Update Build Number */,
 				905EF1B6196164E300FC3CE9 /* Copy Command Line Utility */,
-				5FFCAE09C8E38261849CBD8B /* [CP] Embed Pods Frameworks */,
-				E2473572359D70831B571D94 /* [CP] Copy Pods Resources */,
+				C5B8C48273E72106885CA8C4 /* [CP] Embed Pods Frameworks */,
+				1E02F0A95AAEBCEF65493F5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -681,12 +728,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FA6DE581941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDownTests" */;
 			buildPhases = (
-				C3414999961CAE1E3468FA43 /* [CP] Check Pods Manifest.lock */,
+				655CCD821E310F9767572216 /* [CP] Check Pods Manifest.lock */,
 				1FA6DE411941CC9E000409FB /* Sources */,
 				1FA6DE421941CC9E000409FB /* Frameworks */,
 				1FA6DE431941CC9E000409FB /* Resources */,
-				3150304F9254488A9E1DF24A /* [CP] Embed Pods Frameworks */,
-				15737D53B38E1C25FA25B328 /* [CP] Copy Pods Resources */,
+				9041D3A827C49F34399D813E /* [CP] Embed Pods Frameworks */,
+				DF04CC0F24ACD058236B0705 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -702,11 +749,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 905EF1B3196164CA00FC3CE9 /* Build configuration list for PBXNativeTarget "macdown-cmd" */;
 			buildPhases = (
-				9E9254BDF8E6C8B700ED319E /* [CP] Check Pods Manifest.lock */,
+				6C852F8D7610992AEEA172AE /* [CP] Check Pods Manifest.lock */,
 				905EF1A3196164CA00FC3CE9 /* Sources */,
 				905EF1A4196164CA00FC3CE9 /* Frameworks */,
 				905EF1A5196164CA00FC3CE9 /* Copy Files */,
-				E03F69733DB3723996C4D6C6 /* [CP] Copy Pods Resources */,
+				2B0BC8078DAD9D2E3F7D6027 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -725,9 +772,12 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MP;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Tzu-ping Chung ";
 				TargetAttributes = {
+					1FA6DE201941CC9E000409FB = {
+						ProvisioningStyle = Manual;
+					};
 					1FA6DE441941CC9E000409FB = {
 						TestTargetID = 1FA6DE201941CC9E000409FB;
 					};
@@ -740,6 +790,9 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
+				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = 1FA6DE181941CC9E000409FB;
 			productRefGroup = 1FA6DE221941CC9E000409FB /* Products */;
@@ -779,19 +832,20 @@
 				1F0D9DB4194AC9EE008E1856 /* MainMenu.xib in Resources */,
 				1FBDFE9C196170FE00BEEA70 /* Extensions in Resources */,
 				1F41FF7B1C8EEE9200FD9886 /* Templates in Resources */,
-				1FBBD4BE194C952300BB3C88 /* MPExportPanelAccessoryViewController.xib in Resources */,
 				1FA6CDB91952D2CD008D5CA0 /* dsa_pub.pem in Resources */,
 				1F27896B1973BEB100EE696A /* Localizable.strings in Resources */,
 				1F0D9DAD194AC8EF008E1856 /* Images.xcassets in Resources */,
 				1F0D9DAA194AC8CB008E1856 /* Credits.rtf in Resources */,
 				1FBDFEA51962A27300BEEA70 /* MPGeneralPreferencesViewController.xib in Resources */,
 				1F0F3BFC195F75F200FC0B3B /* MathJax in Resources */,
+				852D523D1E260A6400BA7162 /* MPTerminalPreferencesViewController.xib in Resources */,
 				1F4C8E9A194AE0B9004BF82E /* MarkdownDocument.icns in Resources */,
 				1F59491B1AB57C78007394CB /* syntax_highlighting.json in Resources */,
 				1F0D9DAB194AC8CB008E1856 /* InfoPlist.strings in Resources */,
+				95B9E6FD1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.xib in Resources */,
 				1FCE066419633D6C00DC83B4 /* Data in Resources */,
 				1F3FC8AA1C85AE9F000965E1 /* MacDown.sdef in Resources */,
-				95456BD81D44A42100580144 /* MPJekyllPreferencesViewController.xib in Resources */,
+				1FB3C0241E5061A2002AEB6A /* MPExportPanelAccessoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,7 +863,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15737D53B38E1C25FA25B328 /* [CP] Copy Pods Resources */ = {
+		1E02F0A95AAEBCEF65493F5F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -821,7 +875,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDown/Pods-MacDown-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1F8A82A81952F19B00B6BF69 /* Update Build Number */ = {
@@ -854,82 +908,7 @@
 			shellScript = "SOURCE=\"$PWD/Dependency/prism\"\nTARGET=\"$PWD/MacDown/Resources/Prism\"\nrm -rf \"$TARGET\"\nmkdir -p \"$TARGET\"\ncp -r \"$SOURCE/components\" \"$TARGET\"\ncp -r \"$SOURCE/themes\" \"$TARGET\"\ncp -r \"$SOURCE/plugins\" \"$TARGET\"\ncp -r \"$SOURCE/components.js\" \"$TARGET\"";
 			showEnvVarsInLog = 0;
 		};
-		3150304F9254488A9E1DF24A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5C57B7B8BD1D1847D60A43CB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5FFCAE09C8E38261849CBD8B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDown/Pods-MacDown-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9E9254BDF8E6C8B700ED319E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C3414999961CAE1E3468FA43 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E03F69733DB3723996C4D6C6 /* [CP] Copy Pods Resources */ = {
+		2B0BC8078DAD9D2E3F7D6027 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -944,7 +923,82 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-macdown-cmd/Pods-macdown-cmd-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E2473572359D70831B571D94 /* [CP] Copy Pods Resources */ = {
+		655CCD821E310F9767572216 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6C852F8D7610992AEEA172AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9041D3A827C49F34399D813E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4334ECDC0751C835C1600D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C5B8C48273E72106885CA8C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDown/Pods-MacDown-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF04CC0F24ACD058236B0705 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -956,7 +1010,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDown/Pods-MacDown-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -968,6 +1022,7 @@
 			files = (
 				1F396E6619B0EA17000D3EFC /* MPEditorView.m in Sources */,
 				1F0D9D7A194AC7F7008E1856 /* MPMarkdownPreferencesViewController.m in Sources */,
+				95B9E6FC1E9F3A540015BFD5 /* MPJekyllPreferencesViewController.m in Sources */,
 				1F0D9D7D194AC7F7008E1856 /* MPPreferencesViewController.m in Sources */,
 				1F33F2A41A3B56D20001C849 /* NSColor+HTML.m in Sources */,
 				1F5A37141C869C81006E63E7 /* MPPlugInController.m in Sources */,
@@ -977,17 +1032,16 @@
 				1F23A92119928E650052DB78 /* MPMathJaxListener.m in Sources */,
 				1F2649B01A7406DB00EF6AF3 /* NSDocumentController+Document.m in Sources */,
 				1F0D9D67194AC7CF008E1856 /* MPUtilities.m in Sources */,
+				852D523C1E260A6400BA7162 /* MPTerminalPreferencesViewController.m in Sources */,
 				1F0D9D78194AC7F7008E1856 /* MPHtmlPreferencesViewController.m in Sources */,
 				1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */,
 				1F0D9DAF194AC905008E1856 /* main.m in Sources */,
 				1F0D9D66194AC7CF008E1856 /* NSTextView+Autocomplete.m in Sources */,
-				95456BD71D44A42100580144 /* MPJekyllPreferencesViewController.m in Sources */,
 				1F59491E1AB57D87007394CB /* NSJSONSerialization+File.m in Sources */,
 				1FFEB32B19737D6E00B2254F /* YAMLSerialization.m in Sources */,
 				1F64CCC9195F5AB900CE619A /* MPAsset.m in Sources */,
 				1FFEB3251972D88900B2254F /* NSObject+HTMLTabularize.m in Sources */,
 				1F9A14EC194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m in Sources */,
-				95456BDB1D44B9A600580144 /* MPDocument+Jekyll.m in Sources */,
 				1F5A37101C868EC0006E63E7 /* MPPlugIn.m in Sources */,
 				1FBDFEA11962A25A00BEEA70 /* MPGeneralPreferencesViewController.m in Sources */,
 				1F9A14ED194EEE9900D1C6A9 /* MPMainController.m in Sources */,
@@ -995,9 +1049,12 @@
 				1FBBD4CB194CA36500BB3C88 /* hoedown_html_patch.c in Sources */,
 				1F8A8364195346B200B6BF69 /* pmh_styleparser.c in Sources */,
 				1F0D9D93194AC852008E1856 /* MPDocument.m in Sources */,
+				1F96BD801E584A03005E0456 /* MPHomebrewSubprocessController.m in Sources */,
 				1F0D9D76194AC7F7008E1856 /* MPEditorPreferencesViewController.m in Sources */,
 				1F8A83621953461800B6BF69 /* pmh_parser.c in Sources */,
+				95B9E7041E9F4DD30015BFD5 /* MPDocument+Jekyll.m in Sources */,
 				1F8A835D1953454F00B6BF69 /* HGMarkdownHighlighter.m in Sources */,
+				1F847BC61DCC9DB600A47385 /* NSUserDefaults+Suite.m in Sources */,
 				1F3386E61A6B999600FC88C4 /* DOMNode+Text.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1019,9 +1076,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F8858BC1A2D8D82008DC543 /* MPArgumentProcessor.m in Sources */,
 				1FBE8E0F1A11DB1E003E1EF4 /* main.m in Sources */,
-				1F2A17281A1BB3E30055A107 /* NSUserDefaults+Suite.m in Sources */,
+				1F8858BC1A2D8D82008DC543 /* MPArgumentProcessor.m in Sources */,
+				1FEAFEA21DCE762C008C4E8C /* NSUserDefaults+Suite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1055,6 +1112,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9D82194AC83C008E1856 /* Base */,
+				1FCBDF0B1E536C8400C0F56B /* sv */,
+				1FCBDF161E536CAE00C0F56B /* zh-Hant */,
+				1FCBDF211E536CB600C0F56B /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -1063,6 +1123,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9D84194AC83C008E1856 /* Base */,
+				1FCBDF111E536C8500C0F56B /* sv */,
+				1FCBDF1C1E536CAE00C0F56B /* zh-Hant */,
+				1FCBDF271E536CB700C0F56B /* zh-Hans */,
 			);
 			name = MPDocument.xib;
 			path = ../..;
@@ -1072,6 +1135,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9D86194AC83C008E1856 /* Base */,
+				1FCBDF0F1E536C8400C0F56B /* sv */,
+				1FCBDF1A1E536CAE00C0F56B /* zh-Hant */,
+				1FCBDF251E536CB600C0F56B /* zh-Hans */,
 			);
 			name = MPEditorPreferencesViewController.xib;
 			path = ../..;
@@ -1081,6 +1147,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9D88194AC83C008E1856 /* Base */,
+				1FCBDF101E536C8500C0F56B /* sv */,
+				1FCBDF1B1E536CAE00C0F56B /* zh-Hant */,
+				1FCBDF261E536CB700C0F56B /* zh-Hans */,
 			);
 			name = MPHtmlPreferencesViewController.xib;
 			path = ../..;
@@ -1090,6 +1159,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9D8A194AC83C008E1856 /* Base */,
+				1FCBDF0E1E536C8400C0F56B /* sv */,
+				1FCBDF191E536CAE00C0F56B /* zh-Hant */,
+				1FCBDF241E536CB600C0F56B /* zh-Hans */,
 			);
 			name = MPMarkdownPreferencesViewController.xib;
 			path = ../..;
@@ -1099,6 +1171,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9DA7194AC8CB008E1856 /* en */,
+				1FCBDF121E536C8500C0F56B /* sv */,
+				1FCBDF1D1E536CAE00C0F56B /* zh-Hant */,
+				1FCBDF281E536CB700C0F56B /* zh-Hans */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -1107,6 +1182,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9DA9194AC8CB008E1856 /* en */,
+				1FCBDF131E536C8500C0F56B /* sv */,
+				1FCBDF1E1E536CAE00C0F56B /* zh-Hant */,
+				1FCBDF291E536CB700C0F56B /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1114,32 +1192,44 @@
 		1F2789691973BEB100EE696A /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1F27896A1973BEB100EE696A /* Base */,
+				1FA9196B1E4723A200850517 /* en */,
+				1FCBDF151E536C9F00C0F56B /* sv */,
+				1FCBDF1F1E536CAF00C0F56B /* zh-Hant */,
+				1FCBDF2A1E536CB700C0F56B /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		1FBBD4BC194C952300BB3C88 /* MPExportPanelAccessoryViewController.xib */ = {
+		1FB3C0221E5061A2002AEB6A /* MPExportPanelAccessoryViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1FBBD4BD194C952300BB3C88 /* Base */,
+				1FB3C0231E5061A2002AEB6A /* Base */,
+				1FCBDF0C1E536C8400C0F56B /* sv */,
+				1FCBDF171E536CAE00C0F56B /* zh-Hant */,
+				1FCBDF221E536CB600C0F56B /* zh-Hans */,
 			);
 			name = MPExportPanelAccessoryViewController.xib;
-			path = Code/Document;
 			sourceTree = "<group>";
 		};
 		1FBDFEA31962A27300BEEA70 /* MPGeneralPreferencesViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1FBDFEA41962A27300BEEA70 /* Base */,
+				1FCBDF0D1E536C8400C0F56B /* sv */,
+				1FCBDF181E536CAE00C0F56B /* zh-Hant */,
+				1FCBDF231E536CB600C0F56B /* zh-Hans */,
 			);
 			name = MPGeneralPreferencesViewController.xib;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		1FCDCA321944F96E00B1F966 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1FCDCA331944F96E00B1F966 /* en */,
+				1FCBDF141E536C8900C0F56B /* sv */,
+				1FCBDF201E536CAF00C0F56B /* zh-Hant */,
+				1FCBDF2B1E536CB700C0F56B /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1151,6 +1241,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1160,14 +1251,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1190,6 +1286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1199,14 +1296,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1220,16 +1322,19 @@
 		};
 		1FA6DE561941CC9E000409FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E21FAAF2A06AF075560AC84 /* Pods-MacDown.debug.xcconfig */;
+			baseConfigurationReference = 1A198D1BA59D710201DD3BC8 /* Pods-MacDown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
 				INFOPLIST_FILE = "MacDown/MacDown-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.uranusjr.${PRODUCT_NAME:rfc1034identifier:lower}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uranusjr.${PRODUCT_NAME:rfc1034identifier:lower}-debug";
 				PRODUCT_NAME = MacDown;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1237,16 +1342,19 @@
 		};
 		1FA6DE571941CC9E000409FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22C5E49F85A1B5EA5AE68E08 /* Pods-MacDown.release.xcconfig */;
+			baseConfigurationReference = 39EFCAE04F60154F0C8C5469 /* Pods-MacDown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
 				INFOPLIST_FILE = "MacDown/MacDown-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uranusjr.${PRODUCT_NAME:rfc1034identifier:lower}";
 				PRODUCT_NAME = MacDown;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1254,7 +1362,7 @@
 		};
 		1FA6DE591941CC9E000409FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C51EBB4EA913F65D820260BE /* Pods-MacDownTests.debug.xcconfig */;
+			baseConfigurationReference = 8CDC5EA0050D2F722FB1AADD /* Pods-MacDownTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacDown.app/Contents/MacOS/MacDown";
 				CLANG_ENABLE_MODULES = NO;
@@ -1284,7 +1392,7 @@
 		};
 		1FA6DE5A1941CC9E000409FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5919A38B03A6C4C970F2584C /* Pods-MacDownTests.release.xcconfig */;
+			baseConfigurationReference = 0D0EC0DE9FEA22F962083921 /* Pods-MacDownTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacDown.app/Contents/MacOS/MacDown";
 				CLANG_ENABLE_MODULES = NO;
@@ -1310,7 +1418,7 @@
 		};
 		905EF1B1196164CA00FC3CE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95D4BBB655329255B0D63999 /* Pods-macdown-cmd.debug.xcconfig */;
+			baseConfigurationReference = 4DBAA63927A60EB2150642B3 /* Pods-macdown-cmd.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
@@ -1325,7 +1433,7 @@
 		};
 		905EF1B2196164CA00FC3CE9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F96F8144789A886416868F0D /* Pods-macdown-cmd.release.xcconfig */;
+			baseConfigurationReference = 7A8EA75FA95818275755F0B6 /* Pods-macdown-cmd.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";

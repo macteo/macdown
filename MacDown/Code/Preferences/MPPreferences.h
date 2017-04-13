@@ -17,7 +17,6 @@ extern NSString * const MPDidDetectFreshInstallationNotification;
 @property (assign) NSString *firstVersionInstalled;
 @property (assign) NSString *latestVersionInstalled;
 @property (assign) BOOL updateIncludesPreReleases;
-@property (assign) NSArray *filesToOpenOnNextLaunch;
 @property (assign) BOOL supressesUntitledDocumentOnLaunch;
 @property (assign) BOOL createFileForLinkTarget;
 
@@ -54,6 +53,7 @@ extern NSString * const MPDidDetectFreshInstallationNotification;
 @property (assign) NSInteger editorWordCountType;
 @property (assign) BOOL editorScrollsPastEnd;
 @property (assign) BOOL editorEnsuresNewlineAtEndOfFile;
+@property (assign) NSInteger editorUnorderedListMarkerType;
 
 @property (assign) BOOL previewZoomRelativeToBaseFontSize;
 
@@ -75,10 +75,15 @@ extern NSString * const MPDidDetectFreshInstallationNotification;
 @property (readonly) NSString *editorBaseFontName;
 @property (readonly) CGFloat editorBaseFontSize;
 @property (nonatomic, assign) NSFont *editorBaseFont;
+@property (readonly) NSString *editorUnorderedListMarker;
 
 // Jekyll preferences
 @property (assign) BOOL jekyllEnableFilePreview;
 
 - (instancetype)init;
+
+// Convinience methods.
+@property (nonatomic, assign) NSArray *filesToOpen;
+@property (nonatomic, assign) NSString *pipedContentFileToOpen;
 
 @end
